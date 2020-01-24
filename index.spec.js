@@ -13,6 +13,15 @@ describe('testing index routes', ()=>{
         const res = await supertest(server).get('/api')
         expect(res.status).toBe(200)
     })
+
+    test('creat user route', async () =>{
+        const res = await supertest(server)
+            .post('/api')
+            .send({username:'timmy', password:'bca123'})
+        expect(res.status).toBe(201)
+        expect(res.type).toBe('application/json')
+        expect(res.body).toEqual({id: 4, username: 'timmy', password:'bca123'})
+    })
 })
 
 

@@ -17,11 +17,11 @@ describe('users model', ()=>{
     })
 
 
-    test('add user', async ()=>{
-       const res = await userModel.add({username: 'steveoo', password:'abc321' })
-       const users = await db('users').select()
-       expect(users).toHaveLength(4)
-    })
+    // test('add user', async ()=>{
+    //    const res = await userModel.add({username: 'steveoo', password:'abc321' })
+    //    const users = await db('users').select()
+    //    expect(users).toHaveLength(4)
+    // })
 
     test('update user', async ()=>{
         const res = await userModel.updateUser(1, {username: 'tommy',password:'dfads'})

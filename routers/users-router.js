@@ -26,7 +26,7 @@ router.get('/:id', async (req,res,next)=>{
 router.post('/', async (req,res,next)=>{
     try{
         const user = req.body
-        res.json(await userModel.add(user))
+        res.status(201).json(await userModel.add(user))
     }
     catch(err){
         next(err)
